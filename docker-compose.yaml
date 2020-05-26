@@ -4,7 +4,7 @@ services:
   # Database
   db:
     image: mysql:5.7
-    volumes: ['./db-data:/var/lib/mysql']
+    volumes: ['./db_data:/var/lib/mysql']
     #  - db_data:/var/lib/mysql
     restart: always
     environment:
@@ -13,7 +13,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     networks:
-      - wpsite
+      - wp_moby_network
   # phpmyadmin
   phpmyadmin:
     depends_on:
@@ -26,7 +26,7 @@ services:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: password
     networks:
-      - wpsite
+      - wp_moby_network
   # Wordpress
   wordpress:
     depends_on:
@@ -41,8 +41,8 @@ services:
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
     networks:
-      - wpsite
+      - wp_moby_network
 networks:
-  wpsite:
+  wp_moby_network:
 volumes:
   db_data:
