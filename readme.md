@@ -29,5 +29,5 @@ It creates an internal network to connect services, no need to redirect traffic,
 
 ## Stop
 
-``` docker-compose stop 
+```docker-compose stop```
 
