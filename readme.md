@@ -25,12 +25,16 @@ It creates an internal network to connect services, no need to redirect traffic,
  
 ## Installation and run
 
-```git clone https://github.com/bazuara/wp_moby.git
+```
+	git clone https://github.com/bazuara/wp_moby.git
 	cd wp_moby
 	cp .env.example .env
-	docker-compose up -d ```
+	docker-compose up -d
+```
+	
 
 ## Stop
 
-```docker-compose stop```
-
+```
+	docker-compose stop
+```
